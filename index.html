@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple RPG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Simple RPG</h1>
+    <div id="game-container">
+        <div id="map"></div>
+        <div id="message-log">
+            <p>ゲーム開始！</p>
+        </div>
+        <div id="battle-scene" class="hidden">
+            <div id="enemy-sprite"></div>
+            <div id="battle-commands">
+                <button id="attack-command">たたかう</button>
+                <button id="run-command">にげる</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+body {
+    font-family: 'MS Gothic', sans-serif;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+#game-container {
+    width: 640px;
+    height: 480px;
+    border: 2px solid #fff;
+    position: relative;
+    background-color: #333;
+}
+
+#map {
+    width: 100%;
+    height: 80%;
+    position: relative;
+    overflow: hidden; /* マップ外の表示を隠す */
+}
+
+.tile {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+}
+
+.grass {
+    background-color: #2a8a2a;
+}
+
+.player {
+    background-color: #00f;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    z-index: 10;
+}
+
+.enemy {
+    background-color: #f00;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    z-index: 9;
+}
+
+#message-log {
+    width: 100%;
+    height: 20%;
+    border-top: 2px solid #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+#battle-scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#enemy-sprite {
+    width: 100px;
+    height: 100px;
+    background-color: #c0c;
+    margin-bottom: 20px;
+}
+
+#battle-commands button {
+    font-size: 24px;
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
