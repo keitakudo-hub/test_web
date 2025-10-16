@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mapElement = document.getElementById('map');
     const messageLog = document.getElementById('message-log');
     const battleScene = document.getElementById('battle-scene');
+    const playerStatusElement = document.getElementById('player-status');
 
     // Game state
     const gameState = {
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         x: 5,
         y: 5,
         hp: 100,
+        maxHp: 100,
         attack: 10,
         element: null,
     };
@@ -46,6 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const p = document.createElement('p');
         p.textContent = message;
         messageLog.insertBefore(p, messageLog.firstChild);
+    }
+
+    function updatePlayerStatus() {
+        playerStatusElement.textContent = `HP: ${player.hp} / ${player.maxHp}`;
     }
 
     function drawMap() {
@@ -140,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const enemyDamage = currentEnemy.attack;
         player.hp -= enemyDamage;
         logMessage(`${currentEnemy.name} のこうげき！ プレイヤーは ${enemyDamage} のダメージをうけた！`);
+        updatePlayerStatus();
 
         if (player.hp <= 0) {
             logMessage('プレイヤーはたおれてしまった...');
@@ -171,6 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
         drawMap();
         drawPlayer();
         drawEnemies();
+        updatePlayerStatus();
         window.addEventListener('keydown', handleKeyPress);
         logMessage('矢印キーで移動してください。');
     }
